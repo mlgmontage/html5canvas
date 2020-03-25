@@ -23,8 +23,11 @@ function randomNumber(a, b) {
   return parseInt(Math.random() * sum) - Math.abs(a);
 }
 
-function drawRandom(a, b) {
-  lineFromCenter(randomNumber(a, b), randomNumber(a, b));
+function drawRandom() {
+  const midX = parseInt(canvas.clientWidth / 2);
+  const midY = parseInt(canvas.clientHeight / 2);
+
+  lineFromCenter(randomNumber(-midX, midX), randomNumber(-midY, midY));
   context.stroke();
 }
 
