@@ -7,5 +7,25 @@ const midx = parseInt(canvas.clientWidth / 2);
 const midy = parseInt(canvas.clientHeight / 2);
 
 context.moveTo(midx, midy);
-context.lineTo(midx + 200, midy + 100);
+context.strokeRect(midx, midy, 10, 10);
+
+function randomizeInterval(a, b) {
+  const length = Math.abs(a) + Math.abs(b);
+
+  return parseInt(Math.random() * length);
+}
+
+function randomizeNumber(number) {
+  return parseInt(Math.random() * number);
+}
+
+setInterval(function() {
+  context.strokeRect(
+    randomizeNumber(canvas.clientWidth),
+    randomizeNumber(canvas.clientHeight),
+    randomizeNumber(50),
+    randomizeNumber(50)
+  );
+}, 200);
+
 context.stroke();
