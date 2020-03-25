@@ -19,7 +19,10 @@ function randomizeNumber(number) {
   return parseInt(Math.random() * number);
 }
 
+const colors = ["black", "red", "green", "blue", "aqua", "purple", "yellow"];
+
 setInterval(function() {
+  context.strokeStyle = colors[randomizeNumber(colors.length)];
   context.strokeRect(
     randomizeNumber(canvas.clientWidth),
     randomizeNumber(canvas.clientHeight),
